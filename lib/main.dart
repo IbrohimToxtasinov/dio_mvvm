@@ -1,7 +1,8 @@
 import 'package:dio_mvvm/data/api_service/api_service.dart';
 import 'package:dio_mvvm/data/repository/app_repository.dart';
-import 'package:dio_mvvm/screens/fields_page.dart';
+import 'package:dio_mvvm/screens/users_page.dart';
 import 'package:dio_mvvm/view_model/fields_view_model.dart';
+import 'package:dio_mvvm/view_model/users_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -10,6 +11,13 @@ void main() {
     providers: [
       ChangeNotifierProvider(
         create: (context) => FieldsViewModel(
+          appRepository: AppRepository(
+            apiService: ApiService(),
+          ),
+        ),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => UserViewModel(
           appRepository: AppRepository(
             apiService: ApiService(),
           ),
@@ -30,7 +38,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FieldsPage(),
+      home: const SampleUsageIncomes(),
     );
   }
 }

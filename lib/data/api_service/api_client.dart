@@ -10,7 +10,6 @@ class ApiClient {
   _init() {
     dio = Dio(
       BaseOptions(
-        baseUrl: "https://dynamic-view-api.free.mockoapp.net",
         connectTimeout: 25000,
         receiveTimeout: 20000,
       ),

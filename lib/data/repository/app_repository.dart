@@ -5,4 +5,5 @@ class AppRepository {
   AppRepository({required this.apiService});
   ApiService apiService;
   Future<MyResponse> getAllFields() => apiService.getAllFields();
+  Future<MyResponse> getAllUsers() => apiService.getAllUsers();
 }
